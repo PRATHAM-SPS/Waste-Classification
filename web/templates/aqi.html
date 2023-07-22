@@ -1,0 +1,87 @@
+{% extends "import.html" %} 
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AQI</title>
+    <style>
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Enter Seven Inputs</h1>
+    <form method="POST" accept-charset="UTF-8">
+      <label for="input1">PM2.5:</label>
+      <input type="text" id="input1" name="pm2.5" required>
+
+      <label for="input2">PM10:</label>
+      <input type="text" id="input2" name="pm10" required>
+
+      <label for="input3">NO2:</label>
+      <input type="text" id="input3" name="no2" required>
+
+      <label for="input4">NH3:</label>
+      <input type="text" id="input4" name="nh3" required>
+
+      <label for="input5">CO:</label>
+      <input type="text" id="input5" name="co" required>
+
+      <label for="input6">SO2:</label>
+      <input type="text" id="input6" name="so2" required>
+
+      <label for="input7">O3:</label>
+      <input type="text" id="input7" name="o3" required>
+
+      <button type="submit">Submit</button>
+
+    </form>
+
+    <div>
+        <h3><span id="predict"></span></h3>
+    </div>
+
+    <script>
+        function send_data()
+        {
+                document.querySelector('form').addEventListener("submit",form_handler);
+      
+                var fd=new FormData(document.querySelector('form'));
+      
+                var xhr= new XMLHttpRequest();
+      
+                xhr.open('POST','/aqi_pred',true);
+      
+                document.getElementById("predict").innerHTML = "Computing...!";
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == XMLHttpRequest.DONE){
+                        document.getElementById('predict').innerHTML="The AQI Value is "+xhr.responseText;
+                    }
+                };
+      
+                xhr.onload = function(){};
+                xhr.send(fd);
+      
+        }
+        </script>
+
+  </body>
+</html>
+{% endblock %}

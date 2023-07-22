@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/bg">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="320dp"
+        android:layout_height="93dp"
+        android:layout_above="@id/button2"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/buttons"
+        android:fontFamily="@font/poppins_bold"
+        android:text="TAKE PICTURE"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="29sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/buttons"
+        android:fontFamily="@font/poppins_medium"
+        android:text="GALLERY"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/dustbin"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="158dp"
+        android:layout_marginBottom="99dp"
+        app:srcCompat="@drawable/dustbin" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_marginLeft="78dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/rounded_corner"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Take Picture to Scan"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="308dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="624dp"
+        android:backgroundTint="#30B50B"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Blogs"
+        android:textAlignment="center"
+        android:textColor="#F3F3F3" />
+
+        android:id="@+id/blog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="81dp"
+        android:text="Blogs" />
+
+
+</RelativeLayout>

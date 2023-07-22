@@ -1,0 +1,15 @@
+
+{% extends "import.html" %} 
+{% block content %}
+	<h1>Waste Classification Home</h1>
+	<nav>
+		<ul>
+			<li><a href="{{ url_for('home') }}">Home</a></li>
+			<li><a href="{{ url_for('types_of_waste') }}">Types of Waste</a></li>
+			<li><a href="{{ url_for('recycling_guide') }}">Analyzer</a></li>
+			<li><a href="{{ url_for('trends') }}">Trends and Future Predictions</a></li>
+			<li><a href="{{ url_for('aqi') }}">Air Quality Index Predictor</a></li>
+		</ul>
+	</nav>
+	<p>Welcome to our waste classification website. Use the navigation buttons to explore the site.</p>
+{% endblock %}

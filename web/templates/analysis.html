@@ -1,0 +1,34 @@
+
+{% extends "import.html" %} 
+{% block content %}
+
+<select id="my-dropdown" onchange="sendSelectedValue()">
+  <option value="Compare Stats">Compare Stats</option>
+  <option value="Borivali">Borivali</option>
+  <option value="Colaba">Colaba</option>
+  <option value="Kandivali">Kandivali</option>
+  <option value="Kurla">Kurla</option>
+  <option value="Malad">Malad</option>
+  <option value="Mulund">Mulund</option>
+  <option value="Powai">Powai</option>
+  <option value="Sion">Sion</option>
+  <option value="Vasai">Vasai</option>
+</select>
+
+<script>
+  function sendSelectedValue() {
+    var selectedValue = document.getElementById("my-dropdown").value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/selected-value", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify({selectedValue: selectedValue}));
+    location.reload(true);
+  }
+  </script>
+
+<img id="content" src="../static/plot.png">
+<img id="pie" src="../static/district.png">
+<img id="date" src="../static/date.png">
+  
+
+{% endblock %}

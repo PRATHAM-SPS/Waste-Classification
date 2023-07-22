@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Recycling Guide</title>
+</head>
+<body>
+	<h1>Recycling Guide</h1>
+	<nav>
+		<ul>
+			<li><a href="{{ url_for('home') }}">Home</a></li>
+			<li><a href="{{ url_for('types_of_waste') }}">Types of Waste</a></li>
+			<li><a href="{{ url_for('recycling_guide') }}">Recycling Guide</a></li>
+		</ul>
+	</nav>
+	<p>Here is some information on how to recycle different types of waste:</p>
+	<ul>
+		<li>Organic Waste</li>
+		<li>Recyclable Waste</li>
+		<li>Hazardous Waste</li>
+		<li>Electronic Waste</li>
+	</ul>
+</body>
+</html> -->
+
+
+{% extends "import.html" %} 
+{% block content %}
+
+<center>
+<h2>Waste Classification App</h2><br>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="btn btn-primary">
+            Upload Image
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+       
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-info btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <pre id="result">
+      <p>
+
+      </p>
+    </pre>
+
+</div>
+</center><br><br>
+{% endblock %}

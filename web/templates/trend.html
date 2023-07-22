@@ -1,0 +1,61 @@
+{% extends "import.html" %} 
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Two Column Image Display</title>
+	<style type="text/css">
+		.column {
+			float: left;
+			width: 50%;
+			padding: 5px;
+		}
+		.row::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+		img {
+			display: block;
+			margin: auto;
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="column">
+			<img src="../static/NO.png" alt="Image 1">
+            <h2>Trends in NO</h2>
+		</div>
+		<div class="column">
+			<img src="../static/NOx.png" alt="Image 2">
+            <h2>Trends in NOx</h2>
+		</div>
+	</div>
+    <div class="row">
+		<div class="column">
+			<img src="../static/so2.png" alt="Image 1">
+            <h2>Trends in so2</h2>
+		</div>
+		<div class="column">
+			<img src="../static/CO.png" alt="Image 2">
+            <h2>Trends in CO</h2>
+		</div>
+	</div>
+    <div class="row">
+		<div class="column">
+			<img src="../static/O3.png" alt="Image 1">
+            <h2>Trends in O3</h2>
+		</div>
+        <div class="column">
+			<img src="../static/NO2.png" alt="Image 1">
+            <h2>Trends in NO2</h2>
+		</div>
+
+</body>
+</html>
+
+{% endblock %}
